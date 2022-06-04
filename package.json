@@ -1,0 +1,36 @@
+{
+  "name": "to-do-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YaGRRusso/to-do-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.6.5",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.6.1",
+    "@types/sequelize": "^4.28.10",
+    "@types/validator": "^13.6.3"
+  },
+  "bugs": {
+    "url": "https://github.com/YaGRRusso/to-do-api/issues"
+  },
+  "homepage": "https://github.com/YaGRRusso/to-do-api#readme"
+}
