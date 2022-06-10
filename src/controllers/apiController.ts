@@ -1,44 +1,46 @@
 import { Request, Response } from "express";
 import { Todo } from "../models/Todo";
 
+import { sequelize } from '../database/postgresql'
+
 export const getTasks = async (req: Request, res: Response) => {
     let tasks = await Todo.findAll()
 
     res.status(200).json({ tasks })
 }
 
-// export const createTask = async (req: Request, res: Response) => {
-//     let title = req.body.title
+export const createTask = async (req: Request, res: Response) => {
+    let title = req.body.title
 
-//     let newTask = Todo.build({
-//         title: title
-//     })
-//     await newTask.save()
+    let newTask = Todo.build({
+        title: title
+    })
+    await newTask.save()
 
-//     res.status(201).json({ newTask })
-// }
+    res.status(201).json({ newTask })
+}
 
-// export const updateTask = async (req: Request, res: Response) => {
-//     let id = req.params.id
+export const updateTask = async (req: Request, res: Response) => {
+    let id = req.params.id
 
-//     let updatedTask = await Todo.findByPk(id)
+    let updatedTask = await Todo.findByPk(id)
 
-//     if (updatedTask) {
-//         updatedTask.done === 0 ? updatedTask.done = 1 : updatedTask.done = 0
-//         updatedTask.save()
+    if (updatedTask) {
+        updatedTask.done === 0 ? updatedTask.done = 1 : updatedTask.done = 0
+        updatedTask.save()
 
-//         res.status(200).json({ updatedTask })
-//     } else {
-//         res.status(404).json({ error: 404 })
-//     }
-// }
+        res.status(200).json({ updatedTask })
+    } else {
+        res.status(404).json({ error: 404 })
+    }
+}
 
-// export const deleteTask = async (req: Request, res: Response) => {
-//     let id = req.params.id
+export const deleteTask = async (req: Request, res: Response) => {
+    let id = req.params.id
 
-//     await Todo.destroy({
-//         where: { id }
-//     })
+    await Todo.destroy({
+        where: { id }
+    })
 
-//     res.status(200).json({})
-// }
+    res.status(200).json({})
+}
