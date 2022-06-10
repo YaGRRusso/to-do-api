@@ -1,5 +1,5 @@
 import { Model, DataTypes } from "sequelize";
-import { sequelize } from '../database/mysql'
+import { sequelize } from '../database/postgresql'
 
 export interface TodoTS extends Model {
     id: number,
